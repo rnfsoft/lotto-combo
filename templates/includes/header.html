@@ -1,0 +1,34 @@
+<nav class="navbar navbar-dark bg-dark">
+    <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="{% url 'home' %}"><strong>LT Combo</strong></a>
+  
+    <div class="collapse navbar-collapse nav-line" id="navbarToggler">
+      <div class="row">
+        <div class="col-2 col-md-2 nav" id="tab" role="tablist" aria-orientation="vertical">
+          <a class="nav-link active" id="how-to-tab" data-toggle="pill" href="#how-to-tab-content" role="tab" aria-controls="how-to-use" aria-selected="true">How To</a>
+          <div class="w-100"></div>
+          <a class="nav-link" id="history-tab" data-toggle="pill" href="#history-tab-content" role="tab" aria-controls="history" aria-selected="false">History</a>
+          <div class="w-100"></div>
+          <a class="nav-link" id="about-tab" data-toggle="pill" href="#about-tab-content" role="tab" aria-controls="about" aria-selected="false">About</a>
+        </div>
+        <div class="col-10 col-md-10 tab-content" id="tabContent">      
+          <div class="tab-pane active" id="how-to-tab-content" role="tabpanel" >
+              <p><strong>Game</strong>: Select a game from the list.</p>
+              <p><strong>Numbers</strong>: Type 1 or more numbers separated by a comma or space to look up combinations of lottery winning numbers. </p>
+              <p><strong>* Number</strong>: Special number such as mega or power number. 1 number only. </p>
+              <p><strong>Min # of occurrence</strong>: Show results that have at least this many occurrences. 10 is default. </p>
+          </div>
+          <div class="tab-pane fade" id="history-tab-content" role="tabpanel" >Available soon. Displaying the most common numbers and combinations. </div>
+          <div class="tab-pane fade" id="about-tab-content" role="tabpanel" >
+              <p> LT Combo app analyzes the number of occurrences from combinations of all lottery winning numbers. 
+              Occurrences are updated daily based on data from https://data.ny.gov/. 
+              This app does neither promote playing the games nor predict future winning numbers, so use it at your own risk.<br/><br/>
+              Developed by <i>programmer.az09</i>   
+              </p>  
+          </div>
+        </div> 
+    </div>   
+</nav>
+

@@ -1,0 +1,65 @@
+{% load form_tags %}
+<div class="col-12 col-md-6">
+        
+    {% if match_all_numbers %}
+    <div class="h5 text-center"> Match all numbers entered </div>
+    <table id="table1" class="table table-striped">
+        <thead>
+            <tr>
+                <!-- <th class="width: 50% text-center">Game</th> -->
+                <th class="width: 50% text-center">Numbers</th>
+                <th class="width: 25% text-center js-game">* Number</th>
+                <th class="width: 25% text-center"># of occurrence</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for n in match_all_numbers %}
+            <tr>
+                <!-- <td class="text-center">{{ n.game}}</td> -->
+                <td class="text-center">{{ n.numbers|dash_numbers}}</td>
+                <td class="text-center">{{ n.number}}</td>
+                <td class="text-center">{{ n.occurrence }} </td>
+            </tr>
+        {% endfor %} 
+
+        </tbody>
+    </table>
+    {% elif match_all_numbers is None and other_combinations is None %}
+        
+    {% else %}
+        <div class="text-center">-- No exact match found --</div> 
+    {% endif %}
+</div>
+<div class="d-lg-none mb-5"></div>
+<div class="col-12 col-md-6">
+    {% if other_combinations %}
+    <div class="h5 text-center"> Other combinations</div>  
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <!-- <th class="width: 50% text-center">Game</th> -->
+                <th class="width: 50% text-center">Numbers</th>
+                <th class="width: 25% text-center js-game">* Number</th>
+                <th class="width: 25% text-center"># of occurrence</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            {% for c in other_combinations %}
+                <tr>
+                    <!-- <td class="text-center">{{ n.game}}</td> -->
+                    <td class="text-center">{{ c.numbers|dash_numbers}}</td>
+                    <td class="text-center">{{ c.number}}</td>
+                    <td class="text-center">{{ c.occurrence }} </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% elif match_all_numbers is None and other_combinations is None %}
+
+    {% else %}
+        <div class="text-center">-- No other combinations found --</div> 
+    {% endif %}
+</div>
+
+
